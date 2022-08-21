@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+/*
+font-family: 'Inter', sans-serif; 400 700
+font-family: 'Lexend Deca', sans-serif; 400
+*/
+
+body {
+    font-size: 15px;
+    background: hsl(233, 47%, 7%);  
+    color: white;
+    display: grid;
+    align-items: center;
+    height: 100vh;
+    padding: 10vh 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+                            /* COL-1 */
+
+.container .col-1 {
+    position: relative;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.container .col-1 .desk-bg {
+    position: absolute;
+    opacity: 0;
+}
+
+.container .col-1 img {
+    width: 100%;
+    height: 100%;
+}
+
+.container .col-1::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    background: hsl(277deg 90% 29%);
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0.6;
+}
+
+                            /* COL-2 */
+
+.col-2 {
+    text-align: center;
+    padding: 30px;
+    background: hsl(244, 38%, 16%);
+    transition: 0.2s linear;
+}
+
+.col-2 .main-title {
+    font-size: 25px;
+}
+
+.col-2 h2,
+.col-2 .main-txt {
+    font-family: 'Inter', sans-serif;
+}
+
+.col-2 .main-title span {
+    color: hsl(277, 64%, 61%);
+}
+
+.col-2 .main-txt {
+    color: hsla(0, 0%, 100%, 0.75);
+    font-weight: 400;
+    margin-top: 20px;
+    line-height: 25px;
+}
+
+.col-2 .stats {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-transform: uppercase;
+}
+
+.col-2 .stats p {
+    font-family: 'Lexend Deca', sans-serif;
+    color: hsla(0, 0%, 100%, 0.75);
+    margin-top: 5px;
+}
+
+@media only screen and (min-width: 1000px) {
+
+}
+
+@media only screen and (min-width: 1000px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 50%); 
+        max-width: 1024px;
+        border-radius: 5px;
+    }
+    
+    .container .col-1 .mb-bg {
+        position: absolute;
+        opacity: 0;
+    }
+    
+    .container .col-1 .desk-bg {
+        position: relative;
+        opacity: 1;
+    }
+    
+    .col-1 {
+        grid-column: 2;
+    } 
+    
+    .col-2 {
+        text-align: left;
+        grid-row: 1;
+        padding: 60px;
+        display: grid;
+        row-gap: 50px;
+    }
+    
+    .col-2 .stats {
+        flex-direction: row;
+    }
+
+}
